@@ -1,91 +1,119 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Biografi Tabi'ul Aulad</title>
     <style>
-        body{
+        /* RESET DASAR AGAR LEBAR SEMUA KOTAK SAMA PRESISI */
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family:serif ;
+            padding: 0;
         }
-        .kotak-atas{
+
+        body {
+            font-family: serif;
+            background-color: #fcfcfc;
+            overflow-x: hidden;
+        }
+
+        /* WAPPER UTAMA AGAR SEMUA KOTAK SEJAJAR (MAX-WIDTH 900PX) */
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 1. KOTAK BIOGRAFI ATAS */
+        .kotak-atas {
             background-color: rgb(11, 3, 87);
             color: white;
-            width: 100%;
-            padding: 10px;
             text-align: center;
-            box-sizing: border-box;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            border-bottom: 3px solid aqua;
         }
-        .isi-konten {
-        padding: 20px;
-        text-align: center;
-        font-size: 15px;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
-        font-weight: bold;
+
+        .kotak-atas h1 {
+            font-size: 24px;
+            letter-spacing: 1px;
         }
-        .h1 {
-        display: inline-block;
-         background-color: #1a237e;
-            color: white;
-            border: 2px solid #29b6f6;
-            padding: 12px 40px;                /* Jarak dalam kotak */
-            border-radius: 8px;               /* Sudut melengkung elegan */
-            font-size: 22px;                   /* Ukuran teks */
-            letter-spacing: 5px;               /* Jarak antar huruf */
-            margin: 0;
-            text-transform: uppercase;
-        }
+
+        /* FOTO PROFIL */
         .kontainer-foto {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0 20px 0;
         }
 
         .foto-lingkaran {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 5px solid rgb(12, 12, 12);
-        margin-top: 40px;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid rgb(12, 12, 12);
         }
 
+        /* KOTAK NAMA TABI'UL AULAD */
+        .isi-konten {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+            font-weight: bold;
+        }
+
+        .isi-konten h1 {
+            display: inline-block;
+            background-color: rgb(11, 3, 87);
+            color: white;
+            border: 2px solid aqua;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+            padding: 10px 30px;
+            border-radius: 10px;
+            font-size: 22px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* 2. KOTAK ISI TEKS BIOGRAFI */
         .isi-teks {
+            display: flex;
             gap: 20px;
             align-items: stretch;
-            display: flex;
-            padding: 0 20px;
             margin-bottom: 20px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 18px;
-        }
-        .kotak {
-            border: 2px solid ;
-            padding: 16px;
-            border-color: rgb(8, 8, 8);
-            flex: 1;
-            border-radius: 20px;
-            background-color: #f5f5f5;
-            border: 2px solid #1a237e;
-            color: #212121;
+            width: 100%;
         }
 
+        .kotak {
+            background-color: #e0f7fa;
+            border: 2px solid #00acc1;
+            color: #004d40;
+            padding: 18px;
+            flex: 1;
+            border-radius: 12px;
+            text-align: justify;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* 3. FOOTER BAWAH SENDIRI */
         .footer {
             background-color: rgb(11, 3, 87);
             color: white;
             text-align: center;
-            padding: 25px 20px;
-            margin-top: 100px;   
+            padding: 20px;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            border-radius: 10px;
             border-top: 3px solid aqua;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
         }
-        
+
         .footer p {
             margin: 5px 0;
             font-size: 14px;
@@ -98,106 +126,101 @@
         .footer .sosmed a {
             color: aqua;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 8px;
             font-weight: bold;
-            transition: 0.3s;
         }
 
-        .footer .sosmed a:hover {
-            color: white;
-            text-shadow: 0 0 8px aqua;
-        }
-
-        /* --- TAMPILAN KHUSUS HP --- */
+        /* --- ATURAN KHUSUS LAYAR HP --- */
         @media (max-width: 600px) {
-            body {
-                overflow-x: hidden;
+            .wrapper {
+                padding: 0 12px; /* Padding tepi HP */
             }
 
             .kotak-atas h1 {
                 font-size: 20px;
-                letter-spacing: 1px;
             }
 
             .foto-lingkaran {
                 width: 140px;
                 height: 140px;
-                margin-top: 20px;
-                border-width: 4px;
-            }
-
-            .isi-konten {
-                padding: 15px 10px;
             }
 
             .isi-konten h1 {
-                font-size: 18px;
-                padding: 8px 20px;
-                letter-spacing: 1px;
-                box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+                font-size: 17px;
+                padding: 8px 18px;
             }
 
+            /* Kotak berjejer turun ke bawah di HP */
             .isi-teks {
                 flex-direction: column;
                 gap: 15px;
-                padding: 0 15px;
-                margin-bottom: 15px;
-                width: 100%;
-                box-sizing: border-box;
             }
 
             .kotak {
                 width: 100%;
-                padding: 14px;
                 font-size: 14px;
-                line-height: 1.5;
+                padding: 15px;
             }
 
             .footer {
-                margin-top: 40px;
-                padding: 20px 15px;
+                margin-top: 30px;
+                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="kotak-atas">
-        <h1>BIOGRAFI</h1>
-    </div>
-     
-    <div class="kontainer-foto">
-       <img src="foto.jpeg" alt="foto profil" class="foto-lingkaran">
-    </div>
 
-    <div class="isi-konten">
-        <h1 class="h1">TABI'UL AULAD </h1>
-    </div>
+    <!-- SEMUA ELEMEN DIBUNGKUS WAPPER AGAR LEBARNYA SAMA PERSISI -->
+    <div class="wrapper">
 
-    <div class="isi-teks">
-        <div class="kotak">Saya lahir di Cilacap pada tanggal 28 Februari 2008. Sejak kecil, lingkungan tempat saya tumbuh membentuk pribadi yang haus akan ilmu dan memegang teguh nilai-nilai keagamaan. Perjalanan pendidikan menjadi fondasi penting dalam membentuk karakter, kedisiplinan, serta arah masa depan yang sedang saya bangun saat ini secara konsisten.
+        <!-- KOTAK ATAS -->
+        <div class="kotak-atas">
+            <h1>BIOGRAFI</h1>
+        </div>
+         
+        <!-- FOTO PROFIL -->
+        <div class="kontainer-foto">
+            <img src="foto-saya.jpeg" alt="foto profil" class="foto-lingkaran">
         </div>
 
-        <div class="kotak">Pendidikan formal saya dimulai dari Madrasah Ibtidaiyah Campursalam Darussalam untuk menimba ilmu dasar dan karakter religius. Lulus dari ibtidaiyah, saya melanjutkan ke SMP Nida Alquran. Di sekolah menengah ini, saya mendalami ilmu umum sekaligus ditempa dalam lingkungan yang erat dengan Al-Qur'an dan nilai kedisiplinan.
-        </div>
-    </div>
-    
-    <div class="isi-teks">
-        <div class="kotak">Selesai jenjang SMP, saya memilih jalur pendidikan nonformal melalui Program Kesetaraan SMA di PKKPS Nida. Pengalaman belajar di jalur kesetaraan ini memberikan fleksibilitas tinggi. Hal tersebut mengajarkan saya arti penting kemandirian, tanggung jawab pribadi, serta ketekunan penuh dalam mengejar cita-cita masa depan.
+        <!-- NAMA -->
+        <div class="isi-konten">
+            <h1>TABI'UL AULAD</h1>
         </div>
 
-        <div class="kotak">Kini, di usia muda, saya melangkah ke jenjang perguruan tinggi sebagai mahasiswa aktif Universitas Islam Negeri (UIN) Salatiga. Menjadi bagian dari civitas akademika UIN Salatiga memberi kesempatan luas untuk memperluas wawasan akademis, mengasah potensi diri, serta bersiap berkontribusi nyata bagi masyarakat luas.
+        <!-- BARIS PERTAMA KOTAK BIOGRAFI -->
+        <div class="isi-teks">
+            <div class="kotak">
+                Saya lahir di Cilacap pada tanggal 28 Februari 2008. Sejak kecil, lingkungan tempat saya tumbuh membentuk pribadi yang haus akan ilmu dan memegang teguh nilai-nilai keagamaan. Perjalanan pendidikan menjadi fondasi penting dalam membentuk karakter, kedisiplinan, serta arah masa depan yang sedang saya bangun saat ini secara konsisten.
+            </div>
+            <div class="kotak">
+                Pendidikan formal saya dimulai dari Madrasah Ibtidaiyah Campursalam Darussalam untuk menimba ilmu dasar dan karakter religius. Lulus dari ibtidaiyah, saya melanjutkan ke SMP Nida Alquran. Di sekolah menengah ini, saya mendalami ilmu umum sekaligus ditempa dalam lingkungan yang erat dengan Al-Qur'an dan nilai kedisiplinan.
+            </div>
         </div>
+
+        <!-- BARIS KEDUA KOTAK BIOGRAFI -->
+        <div class="isi-teks">
+            <div class="kotak">
+                Selesai jenjang SMP, saya memilih jalur pendidikan nonformal melalui Program Kesetaraan SMA di PKKPS Nida. Pengalaman belajar di jalur kesetaraan ini memberikan fleksibilitas tinggi. Hal tersebut mengajarkan saya arti penting kemandirian, tanggung jawab pribadi, serta ketekunan penuh dalam mengejar cita-cita masa depan.
+            </div>
+            <div class="kotak">
+                Kini, di usia muda, saya melangkah ke jenjang perguruan tinggi sebagai mahasiswa aktif Universitas Islam Negeri (UIN) Salatiga. Menjadi bagian dari civitas akademika UIN Salatiga memberi kesempatan luas untuk memperluas wawasan akademis, mengasah potensi diri, serta bersiap berkontribusi nyata bagi masyarakat luas.
+            </div>
+        </div>
+
+        <!-- FOOTER BAWAH -->
+        <footer class="footer">
+            <p>&copy; 2026 Tabi'ul Aulad. All Rights Reserved.</p>
+            <p>Dibuat dengan semangat belajar di UIN Salatiga</p>
+            <div class="sosmed">
+                <a href="#">Instagram</a> | 
+                <a href="#">GitHub</a> | 
+                <a href="#">LinkedIn</a>
+            </div>
+        </footer>
+
     </div>
 
-    <footer class="footer">
-        <p>&copy; 2026 Tabi'ul Aulad. All Rights Reserved.</p>
-        <p>Dibuat dengan semangat belajar di UIN Salatiga</p>
-        <div class="sosmed">
-            <a href="#">Instagram</a> | 
-            <a href="#">GitHub</a> | 
-            <a href="#">LinkedIn</a>
-        </div>
-    </footer>
-    
 </body>
 </html>

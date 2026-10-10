@@ -76,7 +76,7 @@
             color: #212121;
         }
 
-        footer {
+        .footer {
             background-color: rgb(11, 3, 87);
             color: white;
             text-align: center;
@@ -86,33 +86,76 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
         }
         
+        .footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .footer .sosmed {
+            margin-top: 10px;
+        }
+
+        .footer .sosmed a {
+            color: aqua;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .footer .sosmed a:hover {
+            color: white;
+            text-shadow: 0 0 8px aqua;
+        }
+
+        /* --- TAMPILAN KHUSUS HP --- */
         @media (max-width: 600px) {
-            .isi-teks {
-                flex-direction: column; /* Kotak otomatis bertumpuk ke bawah di HP */
-                padding: 0 15px;
-            }
-
-            .kotak {
-                width: 100%;
-            }
-
-            .foto-lingkaran {
-                width: 150px;
-                height: 150px;
-                margin-top: 20px;
-            }
-
-            .isi-konten h1 {
-                font-size: 18px;
-                padding: 10px 20px;
+            body {
+                overflow-x: hidden;
             }
 
             .kotak-atas h1 {
                 font-size: 20px;
+                letter-spacing: 1px;
+            }
+
+            .foto-lingkaran {
+                width: 140px;
+                height: 140px;
+                margin-top: 20px;
+                border-width: 4px;
+            }
+
+            .isi-konten {
+                padding: 15px 10px;
+            }
+
+            .isi-konten h1 {
+                font-size: 18px;
+                padding: 8px 20px;
+                letter-spacing: 1px;
+                box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            }
+
+            .isi-teks {
+                flex-direction: column;
+                gap: 15px;
+                padding: 0 15px;
+                margin-bottom: 15px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .kotak {
+                width: 100%;
+                padding: 14px;
+                font-size: 14px;
+                line-height: 1.5;
             }
 
             .footer {
-                margin-top: 50px;
+                margin-top: 40px;
+                padding: 20px 15px;
             }
         }
     </style>
